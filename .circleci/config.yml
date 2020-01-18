@@ -53,3 +53,12 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+
+  deploy:
+    machine:
+      enabled: true
+    working_directory: ~/webapp
+    steps:
+      - run:
+         name: Deploy
+         command: 'aws s3 sync . s3://simple-app-648 --region us-east-1'
