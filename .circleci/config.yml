@@ -61,7 +61,7 @@ jobs:
       - run:
           name: Deploy
           command: |
-            aws s3 sync . s3://simple-app-648 --region us-east-1
+            aws s3 sync main.* s3://simple-app-648 --region us-east-1
 
 workflows:
   version: 2
