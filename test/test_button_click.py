@@ -9,6 +9,7 @@ class ButtonClickTest(unittest.TestCase):
 
     def test_verify_header_text(self):
         driver = self.driver
+        driver.implicitly_wait(10)
         html_file = Path.cwd() / "main.html"
         driver.get(html_file.as_uri())
         button1 = driver.find_element_by_id("button1")
